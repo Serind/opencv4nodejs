@@ -28,7 +28,7 @@ function getDefaultLibDir() {
 opencvBuild.applyEnvsFromPackageJson()
 
 const libDir = opencvBuild.isAutoBuildDisabled()
-  ? (resolvePath(process.env.OPENCV_LIB_DIR) || getDefaultLibDir())
+  ? (process.env.OPENCV_LIB_DIR || getDefaultLibDir())
   : resolvePath(opencvBuild.opencvLibDir)
 
 log.info('install', 'using lib dir: ' + libDir)
